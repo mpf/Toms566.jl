@@ -1,5 +1,7 @@
 module Toms566
 
+lib566 = joinpath(Pkg.dir(),"Toms566","src","lib566")
+
 import Base.show
 export Problem, show
 
@@ -121,27 +123,27 @@ end
 # ######################################################################
 function initpt_(n::Int, x::Vector, prob::Int)
     factor = Cdouble[1.0]
-    ccall( (:initpt_, "ulib.a"), Void,
+    ccall( (:initpt_, lib566), Void,
            (Ptr{Cint},Ptr{Cdouble},Ptr{Cint},Ptr{Cdouble}),
            &n, x, &prob, factor)
 end
 
 function objfcn_(n::Int, x::Vector{Float64}, prob::Int)
     f = Cdouble[1.0]
-    ccall( (:objfcn_, "ulib.a"), Void,
+    ccall( (:objfcn_, lib566), Void,
            (Ptr{Cint},Ptr{Cdouble},Ptr{Cdouble},Ptr{Cint}),
            &n, x, f, &prob)
     return f[1]
 end
 
 function grdfcn_(n::Int, x::Vector{Float64}, g::Vector{Float64}, prob::Int)    
-    ccall( (:grdfcn_, "ulib.a"), Void,
+    ccall( (:grdfcn_, lib566), Void,
            (Ptr{Cint},Ptr{Cdouble},Ptr{Cdouble},Ptr{Cint}),
            &n, x, g, &prob)
 end
 
 function hesfcn_(n::Int, x::Vector{Float64}, hesd::Vector, hesl::Vector, prob::Int)
-    ccall( (:hesfcn_, "ulib.a"), Void,
+    ccall( (:hesfcn_, lib566), Void,
            (Ptr{Cint},Ptr{Cdouble},Ptr{Cdouble},Ptr{Cdouble},Ptr{Cint}),
            &n, x, hesd, hesl, &prob)
 end
