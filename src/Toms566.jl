@@ -58,7 +58,7 @@ function nvars(prob::Int)
     elseif prob == 6
         (40, "Variably dimensioned")
     elseif prob == 7
-        (50, "Watson")
+        (9, "Watson")
     elseif prob == 8
         (60, "Penalty I")
     elseif prob == 9
@@ -72,7 +72,7 @@ function nvars(prob::Int)
     elseif prob == 13
         (40, "Trigonometric")
     elseif prob == 14
-        (50, "Extended rosenbrock")
+        (40, "Extended rosenbrock")
     elseif prob == 15
         (60, "Extended Powell singular")
     elseif prob == 16
@@ -80,7 +80,7 @@ function nvars(prob::Int)
     elseif prob == 17
         (4, "Wood")
     elseif prob == 18
-        (60, "Chebyquad")
+        (50, "Chebyquad")
     else
         error("Not a valid problem.")
     end
