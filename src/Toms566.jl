@@ -114,6 +114,7 @@ function hesfcn(n::Int, x::Vector, hesd::Vector, hesl::Vector, prob::Int)
 end
 
 function hesfcn!(n::Int, x::Vector, H::Array, hesd::Vector, hesl::Vector, prob::Int)
+    @assert size(H) == (n,n)
     hesfcn_(n, x, hesd, hesl, prob)
     updtosymm!(hesd, hesl, H)
 end
@@ -137,6 +138,7 @@ function objfcn_(n::Int, x::Vector{Float64}, prob::Int)
 end
 
 function grdfcn_(n::Int, x::Vector{Float64}, g::Vector{Float64}, prob::Int)    
+    @assert length(g) == n
     ccall( (:grdfcn_, lib566), Void,
            (Ptr{Cint},Ptr{Cdouble},Ptr{Cdouble},Ptr{Cint}),
            &n, x, g, &prob)
