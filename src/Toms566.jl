@@ -1,6 +1,6 @@
 module Toms566
 
-lib566 = joinpath(Pkg.dir(),"Toms566","src","lib566")
+const lib566 = joinpath(Pkg.dir(),"Toms566","src","lib566")
 
 import Base.show
 export Problem, show
