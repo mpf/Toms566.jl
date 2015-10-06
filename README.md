@@ -34,23 +34,24 @@ p.hes!(x, H)   # gives H = p.hes(x)
 ```
 julia> Pkg.test("Toms566")
 INFO: Testing Toms566
-No.  Name                             n        f(x0)
-  1  Hellical valley                  3     2.50e+03
-  2  Bigg's EXP6                      6     7.79e-01
-  3  Gaussian                         3     3.89e-06
-  4  Powell                           2     1.14e+00
-  5  Box 3-dim                        3     1.03e+03
-  6  Variably dimensioned            40     9.39e+10
-  7  Watson                           9     3.00e+01
-  8  Penalty I                       60     5.45e+09
-  9  Penalty II                      65     2.87e+05
- 10  Brown badly scaled               2     1.00e+12
- 11  Brown and Denis                  4     7.93e+06
- 12  Gulf research and development    3     1.21e+01
- 13  Trigonometric                   40     2.01e-03
- 14  Extended rosenbrock             40     4.84e+02
- 15  Extended Powell singular        60     3.23e+03
- 16  Beale                            2     1.42e+01
- 17  Wood                             4     1.92e+04
- 18  Chebyquad                       50     1.39e-02
- ```
+No.  Name                             n        f(x0)     |∇f(x0)| cond(∇²f(x0))
+  1  Hellical valley                  3     2.50e+03     1.88e+03     9.82e+00
+  2  Bigg's EXP6                      6     7.79e-01     2.55e+00     1.30e+01
+  3  Gaussian                         3     3.89e-06     7.45e-03     5.10e+01
+  4  Powell                           2     1.14e+00     2.00e+04     1.37e+08
+  5  Box 3-dim                        3     1.03e+03     1.49e+02     1.19e+02
+  6  Variably dimensioned            40     9.39e+10     1.01e+11     1.65e+04
+  7  Watson                           9     3.00e+01     1.78e+02     1.63e+02
+  8  Penalty I                       60     5.45e+09     8.02e+07     4.24e+00
+  9  Penalty II                      65     2.87e+05     3.28e+05     9.84e+01
+ 10  Brown badly scaled               2     1.00e+12     2.00e+06     1.00e+00
+ 11  Brown and Denis                  4     7.93e+06     2.14e+06     6.93e+02
+ 12  Gulf research and development    3     1.21e+01     3.97e+01     4.65e+04
+ 13  Trigonometric                   40     2.01e-03     5.30e-02     1.57e+02
+ 14  Extended rosenbrock             40     4.84e+02     1.04e+03     9.90e+01
+ 15  Extended Powell singular        60     3.23e+03     1.78e+03     2.27e+01
+ 16  Beale                            2     1.42e+01     2.78e+01     7.97e+00
+ 17  Wood                             4     1.92e+04     1.64e+04     1.69e+02
+ 18  Chebyquad                       50     1.39e-02     2.65e+00     6.30e+02
+ INFO: Toms566 tests passed
+```
