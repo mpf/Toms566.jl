@@ -1,6 +1,6 @@
 # Toms566
 
-[![Build Status](https://travis-ci.org/mpf/Toms566.jl.svg?branch=master)](https://travis-ci.org/dpo/AMD.jl)
+[![Build Status](https://travis-ci.org/mpf/Toms566.jl.svg?branch=master)](https://travis-ci.org/mpf/Toms566.jl)
 
 
 A Julia interface to [TOMS Algorithm 566](https://dl.acm.org/citation.cfm?doid=355934.355943), which provides a suite of 18 nonlinear functions useful for testing algorithms for unconstrained optimization.
